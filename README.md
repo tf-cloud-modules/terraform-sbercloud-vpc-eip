@@ -8,6 +8,22 @@ provider "sbercloud" {
 }
 ```
 
+## Usage
+```hcl
+module "vpc-eip" {
+    source  = "tf-cloud-modules/vpc-eip/sbercloud"
+
+    publicip_type        = "5_bgp"
+    bandwidth_share_type = "PER"
+    bandwidth_name       = "test"
+    bandwidth_size       = 5
+
+    tags = {
+    env = "test"
+    }
+}
+```
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
